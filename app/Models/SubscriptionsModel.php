@@ -74,6 +74,7 @@ class SubscriptionsModel extends Subscription
     }
 
     public function setTrialEndsAtAttribute($value) {
+        
         if (isset($this->attributes['trial_ends_at'])) {
             $this->attributes['trial_ends_at'] = strtotime($value);
         }

@@ -33,7 +33,7 @@ class AccountModel extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        logger()->info(json_encode("Hello1"));
+
         if(!isset($this->attributes['account_id'])) {
             $this->attributes['account_id'] = Str::random(30);
         }
@@ -42,7 +42,6 @@ class AccountModel extends Model
 
     public function subscriptions() : HasMany
     {
-        logger()->info(json_encode("Hello"));
         return $this->hasMany(SubscriptionsModel::class, 'account_id');
     }
 
