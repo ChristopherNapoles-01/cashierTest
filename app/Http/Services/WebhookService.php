@@ -31,4 +31,9 @@ class WebhookService
         // $account = $this->accountModel->where(['stripe_id' => $data['customer']])->first();
         // $account->subscription()->where(['subscription_id' => $data['id']])->update(['status' => $data['status']]);
     }
+
+    public function handlePaymentIntentFailed(array $payload)
+    {
+        logger()->info(json_encode(['data' => $payload]));
+    }
 }

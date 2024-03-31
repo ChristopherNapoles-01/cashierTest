@@ -23,6 +23,7 @@ class WebhookController extends ControllersWebhookController
             match ($payload['type']) {
                 'customer.subscription.created' => $this->webhookService->handleCreateSubscription($payload),
                 'customer.subscription.updated' => $this->webhookService->handleUpdateSubscription($payload),
+                'payment_intent.payment_failed' => $this->webhookService->handlePaymentIntentFailed($payload),
                 default => '',
             };
 
