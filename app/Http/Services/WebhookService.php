@@ -12,6 +12,7 @@ class WebhookService
 
     public function handleCreateSubscription(array $payload)
     {
+        logger()->info(json_encode(['created' => $payload]));
         // logger()->info(json_encode($payload));
         // logger()->info(current($payload['data'])['id']);
         // logger()->info(current($payload['data'])['customer']);
@@ -25,6 +26,7 @@ class WebhookService
 
     public function handleUpdateSubscription(array $payload)
     {
+        logger()->info(json_encode(['updated' => $payload]));
         // $data = current($payload['data']);
         // $items = $data['items'];
 

@@ -13,7 +13,8 @@ class WebhookController extends ControllersWebhookController
     public function __construct(
         private WebhookService $webhookService
     ){}
-
+    
+    //Manual Creation of webhooks
     public function handleWebhook(Request $request)
     {
         try {
