@@ -79,13 +79,14 @@ class SubscriptionService
         $account = $this->accountModel->findOrFail($accountId);
         
         // dd($account);
-        // return $account->defaultPaymentMethod();
-        // return $account->subscription('basic5');
+        return $account->defaultPaymentMethod();
+        // return $account->subscription('default');
         // return $account->subscribedToPrice($request['price_id']);
         // dd($account->subscribedToProduct($request['product_id']));
         // return $account->updateDefaultPaymentMethod('pm_1P05GBDJjs9tuVo1FQhCfNB1');
-        return $account->addPaymentMethod('pm_1P05GBDJjs9tuVo1FQhCfNB1');
-
+        // return $account->addPaymentMethod('pm_1P05GBDJjs9tuVo1FQhCfNB1');
+        // $paymentMethod = current($account->paymentMethods()->toArray());
+        // return $paymentMethod;
     }
 
     public function cancelSubscription(string $accountId, array $request)

@@ -12,10 +12,8 @@ class AccountController extends Controller
     ){}
     public function store(Request $request)
     {
-        $this->accountModel->fill($request->all());
-        
         return response()->json([
-            'data' => $this->accountModel->save(),
+            'data' => $this->accountModel->create($request->all()),
         ]);
     }
 }

@@ -24,6 +24,7 @@ class SubscriptionsModel extends Subscription
     protected $fillable = [
         'subscription_id',
         'account_id',
+        'subscriptions_status',
         'name',
         'type',
         'stripe_id',
@@ -58,6 +59,7 @@ class SubscriptionsModel extends Subscription
     public function setCreatedAtAttribute($value)
     {
         $this->attributes['created_at'] = strtotime($value);
+        logger()->info(json_encode([$this->attributes]));
     }
 
     public function setUpdatedAtAttribute($value)

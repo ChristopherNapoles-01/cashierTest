@@ -27,7 +27,7 @@ class AccountModel extends Model
         'pm_type',
         'pm_last_four',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     public function __construct(array $attributes = [])

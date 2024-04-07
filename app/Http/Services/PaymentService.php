@@ -3,6 +3,7 @@
 namespace App\Http\Services;
 
 use App\Models\AccountModel;
+use Laravel\Cashier\Cashier;
 
 class PaymentService
 {
@@ -23,7 +24,9 @@ class PaymentService
         //     'payment_method_types' => ['card'],
         // ]);
 
-        $transaction = $account->newSubscription('default', $priceId)->checkout();
+        $transaction = $account->newSubscription('default', $priceId)
+        ->withMetadata(['account_id' => $accountId])
+        ->checkout();
 
         return $transaction->url;
     }
